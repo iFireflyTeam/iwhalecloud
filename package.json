@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run start",
-    "start": "webpack-dev-server --mode=development --config webpack.config.js"
+    "start": "webpack-dev-server --mode=development --config webpack.config.js",
+    "build": "webpack --mode=production --config webpack.config.js"
   },
   "author": "iFireflyTeam",
   "license": "MIT",
