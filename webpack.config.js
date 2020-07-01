@@ -12,8 +12,9 @@ module.exports = {
     port: 8888
   },
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, './dist')
+    filename: "index.js",
+    path: path.resolve(__dirname, './dist'),
+    libraryTarget: 'umd'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -23,6 +24,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(css|less)$/,
+        use: ['style-loader','css-loader','less-loader']
+      },
       {
         test: /\.(jsx|js)$/,
         loader: 'babel-loader',
