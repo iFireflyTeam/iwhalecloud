@@ -16,7 +16,16 @@ module.exports = {
     path: path.resolve(__dirname, './dist')
   },
   module: {
-
+    rules: [
+      {
+        test: /\.(jsx|js)$/,
+        loader: 'babel-loader',
+        include: path.resolve(__dirname, './src'),
+        options: {
+          presets: ['@babel/preset-env', "@babel/preset-react"]
+        }
+      },
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
