@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const TSLintPlugin = require('tslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
@@ -9,7 +10,11 @@ module.exports = {
   devServer: {
     hot: true,
     host: '0.0.0.0',
-    port: 8888
+    port: 8888,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
   },
   output: {
     filename: "index.js",
@@ -53,6 +58,9 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, './src/index.html'),
     }),
+    new TSLintPlugin({
+      files: ['./src/**/*.ts']
+    })
   ]
 
 }
