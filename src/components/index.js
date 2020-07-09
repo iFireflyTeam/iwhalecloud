@@ -1,3 +1,4 @@
-import Button from "./button/index.jsx";
+import Button from "./button/";
+import Panel from "./panel/";
 
-export { Button }
+export { Button, Panel }

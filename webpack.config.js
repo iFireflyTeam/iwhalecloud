@@ -17,7 +17,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx','.ts','.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
@@ -27,6 +27,15 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         use: ['style-loader','css-loader','less-loader']
+      },
+      {
+        test: /\.(tsx|ts)$/,
+        loader: 'ts-loader',
+        include: path.resolve(__dirname, './src'),
+        exclude: /node_modules/,
+        // options: {
+        //   presets: ['@babel/preset-env', "@babel/preset-react"]
+        // }
       },
       {
         test: /\.(jsx|js)$/,
