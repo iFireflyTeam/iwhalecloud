@@ -10,7 +10,7 @@ export default class App extends React.Component {
       <div>
         <h1>沈先生的组件库</h1>
         <Button size="sm" btnType="primary" className="test">small</Button>
-        <Button size="md" className="test">正常</Button>
+        <Button size="md" shape="round" className="test">正常</Button>
         <Button size="lg" disabled className="test">disabled</Button>
         <Button size="lg" btnType="danger" className="test" onClick={() => alert(1)}>危险</Button>
         <Button

@@ -31,6 +31,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorProps>
 export default class Button extends React.Component<ButtonProps, any> {
   static defaultProps = {
     btnType: 'default',
+    shape: 'square'
   }
 
   render() {
