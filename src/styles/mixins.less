@@ -1,0 +1,52 @@
+.text_overflow(@lineNum) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: @lineNum;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: on */
+}
+
+
+.flex_center(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// just for btn
+.btn_size(@paddingX,@paddingY,@fontSize: inherit,@borderRadius:0){
+  padding: @paddingX @paddingY;
+  font-size: @fontSize;
+  border-radius: @borderRadius;
+}
+
+.btn_style(
+  @background: none,
+  @border: none,
+  @color:inherited,
+  @hover-background: lighten(@background, 15%),
+  @hover-border: lighten(@border, 15%),
+  @hover-color: @color
+) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  &:hover{
+    color: @hover-color;
+    background: @hover-background;
+    border-color: @hover-border;
+  }
+  &:focus, &.focus{
+    color: @hover-color;
+    background: @hover-background;
+    border-color: @hover-border;
+  }
+  &:disabled,
+  &.disabled{
+    color: @color;
+    background: @background;
+    border-color: @border;
+  }
+}

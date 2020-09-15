@@ -1,3 +1,89 @@
-.button{
-  font-size: 30px;
+@import "~@/styles/variables";
+@import "~@/styles/mixins";
+
+.btn{
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  padding: 0;
+  background-image: none;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+  &.disabled, &[disabled]{
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.btn-default{
+  //height: 32px;
+  //width: 74px;
+  border: 1px solid #ccc;
+  .btn_style(transparent,#ccc,@black,none,@primary,@primary)
+}
+
+.btn-link{
+
+}
+
+.btn-primary {
+  .btn_style(@primary,@primary,@white)
+}
+
+.btn-danger{
+  .btn_style(@danger,@danger,@white)
+}
+
+
+.btn-lg{
+  .btn_size(@padding-sm, @padding-big)
+}
+.btn-md{
+  .btn_size(@padding-sm / 2, @padding)
+}
+.btn-sm{
+  .btn_size(@padding-sm / 2, @padding-sm)
+}
+
+.btn-link{
+  font-weight: normal;
+  color: @primary;
+  text-decoration: none;
+  box-shadow: none;
+  &:hover{
+    color: @primary;
+    text-decoration: underline;
+    text-underline-color: @primary;
+  }
+  &:focus,
+  &.focus{
+    box-shadow: none;
+    text-underline-color: @primary;
+  }
+  &:disabled,
+  &.disabled {
+    color: @primary;
+    text-decoration: none;
+    //pointer-events: none;
+    &:hover{
+      cursor: not-allowed;
+      pointer-events: none;
+
+    }
+  }
+}
+
+.btn-square{
+  border-radius: 0;
+}
+.btn-round{
+  border-radius: @border-radius;
 }

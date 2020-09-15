@@ -3,6 +3,12 @@ import classNames from 'classnames'
 
 export type ButtonSize = 'lg' | 'md' | 'sm';
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
+// export enum ButtonType {
+//   Primary = 'primary',
+//   Default = 'default',
+//   Danger = 'danger',
+//   Link = 'link',
+// }
 export type ButtonShape = 'square' | 'round';
 
 import './style.less'
@@ -12,24 +18,31 @@ export interface BaseButtonProps {
   disabled?: boolean;
   size?: ButtonSize;
   shape?: ButtonShape;
-  type?: ButtonType;
+  btnType?: ButtonType;
   children: React.ReactNode;
   href?: string
-
 }
 
-export default class Button extends React.Component<BaseButtonProps, any> {
+type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
+type AnchorProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
+
+export type ButtonProps = Partial<NativeButtonProps & AnchorProps>
+
+export default class Button extends React.Component<ButtonProps, any> {
+  static defaultProps = {
+    btnType: 'default',
+  }
 
   render() {
-    const { className, disabled, size, type, shape, children, href, ...restProps } = this.props;
+    const { className, disabled, size, btnType, shape, children, href, ...restProps } = this.props;
     const _clsName = classNames('btn', className, {
-      [`btn-${type}`]: type,
+      [`btn-${btnType}`]: btnType,
       [`btn-${size}`]: size,
       [`btn-${shape}`]: shape,
-      disabled: type === 'link' && disabled,
+      disabled: btnType === 'link' && disabled,
     });
 
-    if(type === 'link' && href) {
+    if(btnType === 'link' && href) {
       return <a className={_clsName} href={href} {...restProps}>{children}</a>
     }
     return (
@@ -39,3 +52,5 @@ export default class Button extends React.Component<BaseButtonProps, any> {
     )
   }
 }
+
+
