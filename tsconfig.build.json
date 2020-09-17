@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es5",
+    "declaration": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "allowJs": true
+    "moduleResolution": "node"
   },
-  "presets": ["@babel/preset-flow"],
   "include": [
-    "./src/**/*"
+    "src"
   ],
   "exclude": [
-    "node_modules"
+    "src/**/*.test.tsx",
+    "src/components/**/*.test.tsx",
+    "src/**/*.stories.tsx"
   ]
 }

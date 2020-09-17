@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '@testing-library/jest-dom'
 import { render, fireEvent } from '@testing-library/react'
 import Button, {ButtonShape,ButtonSize,ButtonType} from "./index";
 

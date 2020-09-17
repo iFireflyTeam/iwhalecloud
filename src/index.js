@@ -1,12 +1,14 @@
-import * as React from 'react'
-import ReactDOM from 'react-dom'
-import App from "./pages/app.tsx";
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('app')
-)
+export {default as Button } from "./components/button/index";
+export {default as Panel } from "./components/panel/index";
 
 
-// import Button from './components/button/index'
-// export {Button}
+// import * as React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from "./pages/app.tsx";
+//
+// ReactDOM.render(
+//   <App/>,
+//   document.getElementById('app')
+// )
+

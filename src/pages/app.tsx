@@ -1,6 +1,7 @@
 import * as React from "react"
 import Button, {ButtonProps} from '../components/button/index'
-import "./global.less"
+import Panel from '../components/panel/index'
+// import "./global.less"
 
 export default class App extends React.Component {
 
@@ -26,6 +27,21 @@ export default class App extends React.Component {
           href="https://www.baidu.com"
           // autoFocus
         >Hello baidu</Button>
+
+        <Panel
+          title='标题'
+          className="sss"
+          border
+          extra={<Button href="/more" btnType="link">more</Button>}>
+          <div>带有边框</div>
+        </Panel>
+
+
+        <Panel
+          title='标题'
+          extra={<Button href="/more" btnType="link">more</Button>}>
+          <div>body</div>
+        </Panel>
       </div>
     )
   }

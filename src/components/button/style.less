@@ -1,7 +1,9 @@
-@import "~@/styles/variables";
-@import "~@/styles/mixins";
+@import "../../styles/variables.less";
+@import "../../styles/mixins.less";
 
-.btn{
+@btn-prefix-cls: ~'@{prefixCls}-btn';
+
+.@{btn-prefix-cls}{
   //display: flex;
   //align-items: center;
   //justify-content: center;
@@ -21,64 +23,65 @@
       pointer-events: none;
     }
   }
-}
-
-.btn-default{
-  border: 1px solid #ccc;
-  .btn_style(transparent,#ccc,@black,none,@primary,@primary)
-}
-
-
-.btn-primary {
-  .btn_style(@primary,@primary,@white)
-}
-
-.btn-danger{
-  .btn_style(@danger,@danger,@white)
-}
-
-
-.btn-lg{
-  .btn_size(@padding-sm, @padding-big)
-}
-.btn-md{
-  .btn_size(@padding-sm / 2, @padding)
-}
-.btn-sm{
-  .btn_size(@padding-sm / 2, @padding-sm)
-}
-
-.btn-link{
-  font-weight: normal;
-  color: @primary;
-  text-decoration: none;
-  box-shadow: none;
-  &:hover{
-    color: @primary;
-    text-decoration: underline;
-    text-underline-color: @primary;
+  &-default{
+    border: 1px solid #ccc;
+    .btn_style(transparent,#ccc,@black,none,@primary,@primary)
   }
-  &:focus,
-  &.focus{
-    box-shadow: none;
-    text-underline-color: @primary;
+
+
+  &-primary {
+    .btn_style(@primary,@primary,@white)
   }
-  &:disabled,
-  &.disabled {
+
+  &-danger{
+    .btn_style(@danger,@danger,@white)
+  }
+
+
+  &-lg{
+    .btn_size(@padding-sm, @padding-big)
+  }
+  &-md{
+    .btn_size(@padding-sm / 2, @padding)
+  }
+  &-sm{
+    .btn_size(@padding-sm / 2, @padding-sm)
+  }
+
+  &-link{
+    font-weight: normal;
     color: @primary;
     text-decoration: none;
-    //pointer-events: none;
+    box-shadow: none;
     &:hover{
-      cursor: not-allowed;
-      pointer-events: none;
-
+      color: @primary;
+      text-decoration: underline;
+      text-underline-color: @primary;
     }
+    &:focus,
+    &.focus{
+      box-shadow: none;
+      text-underline-color: @primary;
+    }
+    &:disabled,
+    &.disabled {
+      color: @primary;
+      text-decoration: none;
+      //pointer-events: none;
+      &:hover{
+        cursor: not-allowed;
+        pointer-events: none;
+
+      }
+    }
+  }
+
+  &-square{
+    border-radius: 0;
+  }
+  &-round{
+    border-radius: @border-radius;
   }
 }
 
-.btn-square{
-  border-radius: 0;
-}
-.btn-round{
-  border-radius: @border-radius;
-}
+
