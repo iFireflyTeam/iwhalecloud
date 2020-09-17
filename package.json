@@ -23,7 +23,9 @@
     "test": "jest --watch",
     "dev": "npm run start",
     "start": "webpack-dev-server --mode=development --config webpack.config.js",
-    "build": "webpack --mode=production --config webpack.config.js"
+    "build": "webpack --mode=production --config webpack.config.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "moduleNameMapper": {
@@ -40,6 +42,10 @@
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "^7.10.1",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react": "^6.0.21",
     "@testing-library/dom": "^7.24.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
@@ -56,6 +62,7 @@
     "jest": "^26.4.2",
     "less": "^3.11.3",
     "less-loader": "^6.1.3",
+    "react-is": "^16.13.1",
     "style-loader": "^1.2.1",
     "transform-class-properties": "^1.0.0-beta",
     "ts-loader": "^8.0.0",

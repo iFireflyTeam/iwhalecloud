@@ -37,7 +37,8 @@ module.exports = {
         test: /\.(tsx|ts)$/,
         loader: 'ts-loader',
         include: path.resolve(__dirname, './src'),
-        exclude: /node_modules/,
+        // exclude: [/node_modules/, /\.test.(tsx|ts)$/],
+        exclude: [/node_modules/, /\.test.(tsx|ts)$/],
         // options: {
         //   presets: ['@babel/preset-env', "@babel/preset-react"]
         // }
