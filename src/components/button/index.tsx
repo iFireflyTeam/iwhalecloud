@@ -12,7 +12,7 @@ export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 // }
 export type ButtonShape = 'square' | 'round';
 
-import './style.less'
+// import './style.less'
 
 export interface BaseButtonProps {
   className?: string;

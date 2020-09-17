@@ -1,134 +1,25 @@
-.shenzhiyong-btn {
-  padding: 0;
-  background-image: none;
-  border-radius: 3px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 150ms ease-in;
-}
-.shenzhiyong-btn.disabled,
-.shenzhiyong-btn[disabled] {
-  cursor: not-allowed;
-  opacity: 0.6;
-  box-shadow: none;
-}
-.shenzhiyong-btn.disabled > *,
-.shenzhiyong-btn[disabled] > * {
-  pointer-events: none;
-}
-.shenzhiyong-btn-default {
-  border: 1px solid #ccc;
-  color: #000;
-  background-color: transparent;
-  border-color: #ccc;
-}
-.shenzhiyong-btn-default:hover {
-  color: #3399ff;
-  background: none;
-  border-color: #3399ff;
-}
-.shenzhiyong-btn-default:focus,
-.shenzhiyong-btn-default.focus {
-  color: #3399ff;
-  background: none;
-  border-color: #3399ff;
-}
-.shenzhiyong-btn-default:disabled,
-.shenzhiyong-btn-default.disabled {
-  color: #000;
-  background: transparent;
-  border-color: #ccc;
-}
-.shenzhiyong-btn-primary {
-  color: #fff;
-  background-color: #3399ff;
-  border-color: #3399ff;
-}
-.shenzhiyong-btn-primary:hover {
-  color: #fff;
-  background: #80bfff;
-  border-color: #80bfff;
-}
-.shenzhiyong-btn-primary:focus,
-.shenzhiyong-btn-primary.focus {
-  color: #fff;
-  background: #80bfff;
-  border-color: #80bfff;
-}
-.shenzhiyong-btn-primary:disabled,
-.shenzhiyong-btn-primary.disabled {
-  color: #fff;
-  background: #3399ff;
-  border-color: #3399ff;
-}
-.shenzhiyong-btn-danger {
-  color: #fff;
-  background-color: #ff3535;
-  border-color: #ff3535;
-}
-.shenzhiyong-btn-danger:hover {
-  color: #fff;
-  background: #ff8282;
-  border-color: #ff8282;
-}
-.shenzhiyong-btn-danger:focus,
-.shenzhiyong-btn-danger.focus {
-  color: #fff;
-  background: #ff8282;
-  border-color: #ff8282;
-}
-.shenzhiyong-btn-danger:disabled,
-.shenzhiyong-btn-danger.disabled {
-  color: #fff;
-  background: #ff3535;
-  border-color: #ff3535;
-}
-.shenzhiyong-btn-lg {
-  padding: 10px 20px;
-  font-size: inherit;
-  border-radius: 0;
-}
-.shenzhiyong-btn-md {
-  padding: 5px 15px;
-  font-size: inherit;
-  border-radius: 0;
-}
-.shenzhiyong-btn-sm {
-  padding: 5px 10px;
-  font-size: inherit;
-  border-radius: 0;
-}
-.shenzhiyong-btn-link {
-  font-weight: normal;
-  color: #3399ff;
-  text-decoration: none;
-  box-shadow: none;
-}
-.shenzhiyong-btn-link:hover {
-  color: #3399ff;
-  text-decoration: underline;
-  text-underline-color: #3399ff;
-}
-.shenzhiyong-btn-link:focus,
-.shenzhiyong-btn-link.focus {
-  box-shadow: none;
-  text-underline-color: #3399ff;
-}
-.shenzhiyong-btn-link:disabled,
-.shenzhiyong-btn-link.disabled {
-  color: #3399ff;
-  text-decoration: none;
-}
-.shenzhiyong-btn-link:disabled:hover,
-.shenzhiyong-btn-link.disabled:hover {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-.shenzhiyong-btn-square {
-  border-radius: 0;
-}
-.shenzhiyong-btn-round {
-  border-radius: 5px;
+@panel-prefix-cls: ~'@{prefixCls}-panel';
+
+.@{panel-prefix-cls}{
+  border: 1px solid @gray;
+  &-header{
+    padding: @padding-big;
+    border-bottom: 1px solid @gray;
+  }
+  &-wrapper{
+    display: flex;
+    .flex_center();
+    justify-content: space-between;
+  }
+  &-title{
+    font-size: @title-font-size;
+    color: @title-color;
+    font-weight: @title-font-weight;
+  }
+  &-border{
+    border: 1px solid transparent;
+  }
+  &-content{
+    padding: @padding-big;
+  }
 }

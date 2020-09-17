@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 // import {cj} from '../../defaultSettings.js'
-import './style.less'
+// import './style.less'
 
 export interface BaseProps {
   title: string,
@@ -15,11 +15,11 @@ export interface BaseProps {
 export default class Panel extends React.Component<BaseProps, any> {
 
   render() {
-    const { className, children, title, extra,border, ...restProps } = this.props;
+    const { className, children, title, extra, border, ...restProps } = this.props;
     // const prefixCls = cj.prefixCls
     const prefixCls = 'shenzhiyong'
     const _clsName = classNames(`${prefixCls}-panel`, className, {
-      [`${prefixCls}-panel-border`]: border,
+      [`${prefixCls}-panel-border`]: !border,
       // [`${prefixCls}-btn-${size}`]: size,
       // [`${prefixCls}-btn-${shape}`]: shape,
       // disabled: btnType === 'link' && disabled,

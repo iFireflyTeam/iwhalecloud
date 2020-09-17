@@ -1,6 +1,6 @@
 import * as React from "react"
-import Button, {ButtonProps} from '../components/button/index'
-import Panel from '../components/panel/index'
+import Button, {ButtonProps} from './components/button/index'
+import Panel from './components/panel/index'
 // import "./global.less"
 
 export default class App extends React.Component {

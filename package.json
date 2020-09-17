@@ -26,7 +26,7 @@
     "dev": "npm run start",
     "clean": "rimraf ./build && rimraf ./dist",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "lessc ./src/components/**/*.less ./dist/**/*.css",
+    "build-css": "lessc ./src/styles/index.less ./dist/style.css",
     "build-npm": "npm run clean && npm run build-ts && npm run build-css",
     "start": "webpack-dev-server --mode=development --config webpack.config.js",
     "build": "npm run clean && webpack --mode=production --config webpack.config.js",
