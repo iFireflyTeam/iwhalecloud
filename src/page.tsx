@@ -1,15 +1,16 @@
-import * as React from "react"
-import Button, {ButtonProps} from './components/button/index'
+import * as React from 'react'
+import Button, { ButtonProps } from './components/button/index'
 import Panel from './components/panel/index'
-// import "./global.less"
+import Loading from './components/Loading/index'
 
 export default class App extends React.Component {
-
   render() {
-    const a = 4
     return (
       <div>
-        <h1>沈先生的组件库</h1>
+        <h1>长江大数据的组件库</h1>
+        <h1>loading</h1>
+        <hr/>
+        <Loading />
         <Button size="sm" btnType="primary" className="test">small</Button>
         <Button size="md" shape="round" className="test">正常</Button>
         <Button size="lg" disabled className="test">disabled</Button>
@@ -19,27 +20,30 @@ export default class App extends React.Component {
           href="https://www.baidu.com"
           target="_blank"
           // onClick={() => alert(1)}
-        >Hello Baidu</Button>
+        >长江工业互联网平台
+        </Button>
 
         <Button
           disabled
           btnType="link"
           href="https://www.baidu.com"
           // autoFocus
-        >Hello baidu</Button>
+        >长江
+        </Button>
 
         <Panel
-          title='标题'
+          title="标题"
           className="sss"
           border
-          extra={<Button href="/more" btnType="link">more</Button>}>
+          extra={<Button href="/more" btnType="link">more</Button>}
+        >
           <div>带有边框</div>
         </Panel>
 
-
         <Panel
-          title='标题'
-          extra={<Button href="/more" btnType="link">more</Button>}>
+          title="标题"
+          extra={<Button href="/more" btnType="link">more</Button>}
+        >
           <div>body</div>
         </Panel>
       </div>
