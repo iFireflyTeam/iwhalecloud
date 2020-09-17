@@ -1,6 +1,6 @@
 {
-  "name": "iwhalecloud",
-  "version": "0.0.0",
+  "name": "shenzhiyong",
+  "version": "1.0.5",
   "description": "A UI framework",
   "keywords": [
     "component",
@@ -16,7 +16,8 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "directories": {
     "doc": "docs"
@@ -25,19 +26,26 @@
     "test": "jest --watch",
     "dev": "npm run start",
     "clean": "rimraf ./build && rimraf ./dist",
+    "link": "eslint --ext js,ts.jsx.tsx src --max-warnings 5",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "lessc ./src/styles/index.less ./dist/style.css",
     "build-npm": "npm run clean && npm run build-ts && npm run build-css",
     "start": "webpack-dev-server --mode=development --config webpack.config.js",
     "build": "npm run clean && webpack --mode=production --config webpack.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run build-npm"
   },
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
+  },
+  "homepage": "https://github.com/iFireflyTeam/iwhalecloud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iFireflyTeam/iwhalecloud"
   },
   "author": "iFireflyTeam",
   "license": "MIT",
@@ -80,18 +88,22 @@
     "typescript": "^3.9.6",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.11.0",
     "@babel/plugin-transform-runtime": "^7.10.4",
     "@types/classnames": "^2.2.10",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
-    "classnames": "^2.2.6",
     "eslint-config-airbnb": "^18.2.0",
     "node-less": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
   }
 }

@@ -6,3 +6,4 @@ deploy_versions/
 /debug.log
 /yarn-error.log
 .idea
+.vscode
