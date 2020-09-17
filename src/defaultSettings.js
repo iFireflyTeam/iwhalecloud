@@ -1,5 +1,3 @@
 export const cj = {
-  prefixCls: 'shenzhiyong'
+  prefixCls: 'shenzhiyong',
 }
-
-

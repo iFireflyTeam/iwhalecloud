@@ -8,13 +8,12 @@ test('test to be true of false', () => {
   expect(0).toBeFalsy()
 })
 
-
 test('test number', () => {
   expect(4).toBeGreaterThan(3)
   expect(2).toBeLessThan(3)
 })
 
 test('test object', () => {
-  expect({name: 'shen'}).toEqual({name: 'shen'})
+  expect({ name: 'shen' }).toEqual({ name: 'shen' })
   // expect({name: 'shen'}).toBe({name: 'shen'}) //error
 })

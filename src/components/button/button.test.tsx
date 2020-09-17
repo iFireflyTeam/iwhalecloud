@@ -1,14 +1,13 @@
 import * as React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import Button, {ButtonShape,ButtonSize,ButtonType} from "./index";
+import Button, { ButtonShape, ButtonSize, ButtonType } from './index'
 
-
-const defaultProps =  {
-  onClick: jest.fn()
+const defaultProps = {
+  onClick: jest.fn(),
 }
 
 // const testProps: ButtonProps = {
-  // btnType: ButtonType.danger
+// btnType: ButtonType.danger
 // }
 
 test('test out button', () => {
@@ -16,7 +15,6 @@ test('test out button', () => {
   const element = wrapper.queryByText('Nice')
   expect(element).toBeTruthy()
 })
-
 
 describe('test Button component', () => {
   it('should render the correct default button', () => {
@@ -28,7 +26,6 @@ describe('test Button component', () => {
     // todo 5-5
     // fireEvent.click(element)
     // expect(defaultProps.onClick).toHaveBeenCalled()
-
   })
 
   it('should render the correct component base on different props', () => {

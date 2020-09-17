@@ -1,7 +1,5 @@
-
-export {default as Button } from "./components/button/index";
-export {default as Panel } from "./components/panel/index";
-
+export { default as Button } from './components/button/index'
+export { default as Panel } from './components/panel/index'
 
 // import * as React from 'react'
 // import ReactDOM from 'react-dom'
@@ -11,4 +9,3 @@ export {default as Panel } from "./components/panel/index";
 //   <App/>,
 //   document.getElementById('app')
 // )
-
