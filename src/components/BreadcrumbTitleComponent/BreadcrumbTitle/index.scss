@@ -1,0 +1,31 @@
+/* stylelint-disable */
+.kpiBreadcrumb {
+  padding-left: 5px;
+  font-size: 14px;
+  color: #999;
+}
+
+.BreadcrumbBold {
+  font-family: GothamRoundedBook;
+  font-size: 14px;
+  color: #333;
+  line-height: 27px;
+}
+
+.BreadcrumbFontStyles {
+  white-space: pre;
+}
+.changeMneu{
+  // display: inline-block;
+  float: left;
+  overflow: hidden;
+  // width: 16px;
+  // height: 16px;
+  margin-top: 2px;
+  margin-right: 6px;
+  line-height: 52px;
+  cursor: pointer;
+}
+//.changeMneu:hover{
+//  color: #4662FE;
+//}

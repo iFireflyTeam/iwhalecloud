@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Button, { ButtonProps } from './components/button/index'
 import Panel from './components/panel/index'
-import Loading from './components/Loading/index'
+// import Loading from './components/loading/index'
 
 export default class App extends React.Component {
   render() {
@@ -9,8 +9,7 @@ export default class App extends React.Component {
       <div>
         <h1>长江大数据的组件库</h1>
         <h1>loading</h1>
-        <hr/>
-        <Loading />
+        {/*<Loading />*/}
         <Button size="sm" btnType="primary" className="test">small</Button>
         <Button size="md" shape="round" className="test">正常</Button>
         <Button size="lg" disabled className="test">disabled</Button>
