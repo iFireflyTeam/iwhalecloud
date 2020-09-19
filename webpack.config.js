@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const TSLintPlugin = require('tslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-
 module.exports = {
   entry: './src/app.tsx',
   mode: 'production',
@@ -13,16 +12,16 @@ module.exports = {
     port: 8888,
     overlay: {
       warnings: true,
-      errors: true
-    }
+      errors: true,
+    },
   },
   output: {
-    filename: "index.js",
+    filename: 'index.js',
     path: path.resolve(__dirname, './dist'),
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.tsx','.ts','.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
@@ -30,8 +29,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.(css|less)$/,
-        use: ['style-loader','css-loader','less-loader']
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.(tsx|ts)$/,
@@ -48,10 +51,10 @@ module.exports = {
         loader: 'babel-loader',
         include: path.resolve(__dirname, './src'),
         options: {
-          presets: ['@babel/preset-env', "@babel/preset-react"]
-        }
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -60,8 +63,8 @@ module.exports = {
       template: path.resolve(__dirname, './src/index.html'),
     }),
     new TSLintPlugin({
-      files: ['./src/**/*.ts']
-    })
-  ]
+      files: ['./src/**/*.ts'],
+    }),
+  ],
 
 }

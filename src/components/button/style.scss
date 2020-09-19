@@ -1,0 +1,81 @@
+$btn-prefix-cls: #{$prefixCls}-btn;
+
+.#{$btn-prefix-cls} {
+  padding: 0;
+  background-image: none;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+  &.disabled, &[disabled]{
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+  &-default{
+    border: 1px solid #ccc;
+    @include btn_style(transparent,#ccc,$black,none,$primary,$primary)
+  }
+
+
+  &-primary {
+    @include btn_style($primary,$primary,$white)
+  }
+
+  &-danger{
+    @include btn_style($danger,$danger,$white)
+  }
+
+
+  &-lg{
+    @include btn_size($padding-sm, $padding-big)
+  }
+  &-md{
+    @include btn_size($padding-sm / 2, $padding)
+  }
+  &-sm{
+    @include btn_size($padding-sm / 2, $padding-sm)
+  }
+
+  &-link{
+    font-weight: normal;
+    color: $primary;
+    text-decoration: none;
+    box-shadow: none;
+    &:hover{
+      color: $primary;
+      text-decoration: underline;
+      text-underline-color: $primary;
+    }
+    &:focus,
+    &.focus{
+      box-shadow: none;
+      text-underline-color: $primary;
+    }
+    &:disabled,
+    &.disabled {
+      color: $primary;
+      text-decoration: none;
+      //pointer-events: none;
+      &:hover{
+        cursor: not-allowed;
+        pointer-events: none;
+
+      }
+    }
+  }
+
+  &-square{
+    border-radius: 0;
+  }
+  &-round{
+    border-radius: $border-radius;
+  }
+}
+
+
