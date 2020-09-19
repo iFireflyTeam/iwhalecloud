@@ -3,44 +3,76 @@ import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import { Button, ButtonProps } from './Button';
+import  Button, { BaseButtonProps } from '../components/button';
+
 
 export default {
   title: 'Example/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: {
+      control: 'color',
+      description: '背景颜色',
+      table: {
+        type: {
+          summary: 'primary'
+        }
+      }
+    },
+    btnType: {
+      control: {
+        type: 'select',
+        options: ['primary','default','danger','link'],
+      },
+      description: '按钮类型',
+      table: {
+        type: {
+          summary: 'primary | default | danger | link'
+        }
+      }
+    },
+    shape: {
+      control: {
+        type: 'select',
+        options: ['square', 'round'],
+      },
+      description: '是否需要圆角',
+      table: {
+        type: {
+          summary: 'square | round'
+        }
+      }
+    },
+    disabled: {
+      control: 'boolean',
+      // defaultValue: false,
+      description: '是否禁用',
+      table: {
+        type: {
+          summary: 'boolean'
+        },
+        defaultValue: { summary: 'false' },
+      }
+    },
+    children: {
+      description: '按钮显示的文本',
+      type: { name: 'string', required: true },
+    },
+    onClick: {
+      description: '() => void: {}'
+    }
+
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<BaseButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
-
-export const MyButton = Template.bind({});
-MyButton.args = {
-  size: 'small',
-  label: 'Button',
+  btnType: 'primary',
+  shape: 'square',
+  children: 'Button',
   onClick: action('sss')
 };
+
+

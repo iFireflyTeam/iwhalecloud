@@ -18,10 +18,12 @@ export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
   size?: ButtonSize;
+  color?: string;
+  backgroundColor?: string;
   shape?: ButtonShape;
   btnType?: ButtonType;
   children: React.ReactNode;
-  href?: string
+  href: string
 }
 
 type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
@@ -33,11 +35,12 @@ export default class Button extends React.Component<ButtonProps, any> {
   static defaultProps = {
     btnType: 'default',
     shape: 'square',
+    size: 'md',
   }
 
   render() {
     const {
-      className, disabled, size, btnType, shape, children, href, ...restProps
+      className, disabled, size, btnType, shape, children, href, backgroundColor, ...restProps
     } = this.props
     const prefixCls = 'shenzhiyong'
     const _clsName = classNames(`${prefixCls}-btn`, className, {
@@ -51,7 +54,7 @@ export default class Button extends React.Component<ButtonProps, any> {
       return <a className={_clsName} href={href} {...restProps}>{children}</a>
     }
     return (
-      <button type="button" className={_clsName} disabled={disabled} {...restProps}>
+      <button type="button" style={{ backgroundColor }} className={_clsName} disabled={disabled} {...restProps}>
         {children}
       </button>
     )
