@@ -35,7 +35,9 @@
     "build": "npm run clean && webpack --mode=production --config webpack.config.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepublish": "npm run build-npm"
+    "prepublish": "npm run build-npm",
+    "build:story": "yarn build-storybook -o ./path/to/build",
+    "server:story": "npx http-server ./path/to/build"
   },
   "husky": {
     "hooks": {
