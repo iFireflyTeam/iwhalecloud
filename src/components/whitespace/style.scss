@@ -1,0 +1,27 @@
+$panel-prefix-cls: #{$prefixCls}-whitespace;
+
+.#{$panel-prefix-cls}{
+  background-color: $gray-bg;
+  height: 8px;
+  &-sm {
+    height: $sm-height;
+  }
+
+  &-vertical{
+    display: inline-block;
+    width: $sm-height;
+    min-height: 100px;
+    height: 100%;
+  }
+
+  &-md {
+    height: $base-height;
+  }
+
+  &-lg {
+    height: $big-height;
+  }
+
+
+
+}

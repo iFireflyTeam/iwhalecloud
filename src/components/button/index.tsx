@@ -1,6 +1,6 @@
 import * as React from 'react'
 import classNames from 'classnames'
-// import {cj} from '../../defaultSettings'
+import { prefixCls } from '../../defaultSettings'
 
 export type ButtonSize = 'lg' | 'md' | 'sm';
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
@@ -42,7 +42,6 @@ export default class Button extends React.Component<ButtonProps, any> {
     const {
       className, disabled, size, btnType, shape, children, href, backgroundColor, ...restProps
     } = this.props
-    const prefixCls = 'shenzhiyong'
     const _clsName = classNames(`${prefixCls}-btn`, className, {
       [`${prefixCls}-btn-${btnType}`]: btnType,
       [`${prefixCls}-btn-${size}`]: size,

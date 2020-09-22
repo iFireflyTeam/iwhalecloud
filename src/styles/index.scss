@@ -1,7 +1,9 @@
-@import "_reset";
+//@import "_reset";
 @import "_variables";
 @import "_mixins";
+@import "~antd/dist/antd.css";
 
 @import "../components/button/style.scss";
-//@import "../components/panel/style.less";
-//@import "../components/Loading/style.less";
+@import "../components/panel/style.scss";
+@import "../components/loading/style.scss";
+@import "../components/whitespace/style.scss";

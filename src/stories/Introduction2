@@ -7,11 +7,8 @@ import Flow from './assets/flow.svg';
 import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
-import logo from './assets/logo.png';
 
-<Meta title="欢迎来到长江组件库" />
-
-
+<Meta title="Example/欢迎" />
 
 <style>{`
   .subheading {
@@ -131,7 +128,13 @@ import 'vikingship/dist/index.css'
 // 引入组件
 import { Button } from 'vikingship'
 ```
+
+Browse example stories now by navigating to them in the sidebar.
+View their code in the `src/storybook-examples` directory to learn how they work.
+We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+
 <div class="subheading">描述文档</div>
+
 <div class="link-list">
   <a class="link-item" href="https://modao.cc/app/c6ff5baaae7d447bef2505ede7e2629daa7ebc1f?simulator_type=device&sticky" target="_blank">
     <img src={Plugin} alt="plugin" />
@@ -140,27 +143,68 @@ import { Button } from 'vikingship'
       保障组件库的完美兼容当前业务需要
     </span>
   </a>
-  <a class="link-item" href="http://gitlab.iwhalecloud.com/iip/iip-front-pc-qst-enterprise" target="_blank">
-    <img src={Colors} alt="plugin" />
+
+  <a class="link-item" href="https://storybook.js.org/docs/react/api/presets" target="_blank">
+    <img src={Plugin} alt="plugin" />
     <span>
-      <strong>前端团队编码规范</strong>
-      保障前端团队代码的质量
+      <strong>Presets for popular tools</strong>
+      Easy setup for TypeScript, SCSS and more.
     </span>
   </a>
+  <a class="link-item" href="https://storybook.js.org/docs/react/configure/webpack" target="_blank">
+    <img src={StackAlt} alt="Build" />
+    <span>
+      <strong>Build configuration</strong>
+      How to customize webpack and Babel
+    </span>
+  </a>
+  <a class="link-item" href="https://storybook.js.org/docs/react/configure/styling-and-css" target="_blank">
+    <img src={Colors} alt="colors" />
+    <span>
+      <strong>Styling</strong>
+      How to load and configure CSS libraries
+    </span>
+  </a>
+  <a class="link-item" href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack" target="_blank">
+    <img src={Flow} alt="flow" />
+    <span>
+      <strong>Data</strong>
+      Providers and mocking for data libraries
+    </span>
+  </a>
+</div>
+
+<div class="subheading">Learn</div>
+
+<div class="link-list">
   <a class="link-item" href="https://storybook.js.org/docs" target="_blank">
-      <img src={Repo} alt="repo" />
-      <span>
-        <strong>Storybook documentation</strong>
-        Configure, customize, and extend
-      </span>
-    </a>
-    <a class="link-item" href="https://www.learnstorybook.com" target="_blank">
-      <img src={Direction} alt="direction" />
-      <span>
-        <strong>In-depth guides</strong>
-        Best practices from leading teams
-      </span>
-    </a>
+    <img src={Repo} alt="repo" />
+    <span>
+      <strong>Storybook documentation</strong>
+      Configure, customize, and extend
+    </span>
+  </a>
+  <a class="link-item" href="https://www.learnstorybook.com" target="_blank">
+    <img src={Direction} alt="direction" />
+    <span>
+      <strong>In-depth guides</strong>
+      Best practices from leading teams
+    </span>
+  </a>
+  <a class="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
+    <img src={Code} alt="code" />
+    <span>
+      <strong>GitHub project</strong>
+      View the source and add issues
+    </span>
+  </a>
+  <a class="link-item" href="https://discord.gg/UUt2PJb" target="_blank">
+    <img src={Comments} alt="comments" />
+    <span>
+      <strong>Discord chat</strong>
+      Chat with maintainers and the community
+    </span>
+  </a>
 </div>
 
 <div class="tip-wrapper">© 2019 安徽长江工业大数据科技股份公司 版权所有 | All rights reserved</div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-// import {cj} from '../../defaultSettings.js'
-// import './style.less'
+import { prefixCls } from '../../defaultSettings'
 
 export interface BaseProps {
   title: string,
@@ -13,23 +12,23 @@ export interface BaseProps {
 }
 
 export default class Panel extends React.Component<BaseProps, any> {
+  static defaultProps = {
+    border: true,
+  }
 
   render() {
-    const { className, children, title, extra, border, ...restProps } = this.props;
-    // const prefixCls = cj.prefixCls
-    const prefixCls = 'shenzhiyong'
+    const {
+      className, children, title, extra, border, ...restProps
+    } = this.props
     const _clsName = classNames(`${prefixCls}-panel`, className, {
-      [`${prefixCls}-panel-border`]: !border,
-      // [`${prefixCls}-btn-${size}`]: size,
-      // [`${prefixCls}-btn-${shape}`]: shape,
-      // disabled: btnType === 'link' && disabled,
-    });
-    const _prefixCls = classNames(`${prefixCls}-panel`);
+      [`${prefixCls}-panel-border`]: border,
+    })
+    const _prefixCls = classNames(`${prefixCls}-panel`)
     return (
       <div className={_clsName} {...restProps}>
         {
-          (title || extra) &&
-          (
+          (title || extra)
+          && (
             <div className={`${_prefixCls}-header`}>
               <div className={`${_prefixCls}-wrapper`}>
                 {title && <div className={`${_prefixCls}-title`}>{title}</div>}

@@ -3,11 +3,11 @@ import * as React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import  Button, { BaseButtonProps } from '../components/button';
+import  Button, { BaseButtonProps } from './index';
 
 
 export default {
-  title: 'Example/Button',
+  title: 'Example/按钮',
   component: Button,
   argTypes: {
     backgroundColor: {
@@ -29,6 +29,19 @@ export default {
         type: {
           summary: 'primary | default | danger | link'
         }
+      }
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['sm','md','lg'],
+      },
+      description: '按钮大小',
+      table: {
+        type: {
+          summary: 'sm | md |lg'
+        },
+        defaultValue: { summary: 'md' },
       }
     },
     shape: {
@@ -63,16 +76,17 @@ export default {
     }
 
   },
-} as Meta;
+} as Meta
 
-const Template: Story<BaseButtonProps> = (args) => <Button {...args} />;
+const Template: Story<BaseButtonProps> = (args:BaseButtonProps) => <Button {...args} />;
 
 export const Primary = Template.bind({});
+
 Primary.args = {
   btnType: 'primary',
   shape: 'square',
   children: 'Button',
-  onClick: action('sss')
+  onClick: action('s')
 };
 
 
